@@ -92,7 +92,7 @@ out
 dist
 
 # Typescript nodejs production compiled build
-compiled
+build
 
 # Gatsby files
 .cache/
