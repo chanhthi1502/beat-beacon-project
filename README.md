@@ -2,4 +2,4 @@
 Project for Beat Beacon application
 
  Contains backend and frontend
- Using containers to store database
+ Using containers to store database postgres
