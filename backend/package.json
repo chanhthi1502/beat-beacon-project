@@ -7,8 +7,9 @@
     "build": "tsc",
     "start": "node build/server.js",
     "dev": "ts-node-dev --respawn --transpile-only server.ts",
-    "docker-up": "docker-compose up --build",
-    "docker-down": "docker-compose down"
+    "docker-up": "docker-compose up --build -d",
+    "docker-down": "docker-compose down",
+    "reset-containers": "docker-compose down -v && docker-compose up --build -d"
   },
   "dependencies": {
     "express": "^4.21.1",
