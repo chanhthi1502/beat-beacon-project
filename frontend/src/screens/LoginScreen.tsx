@@ -1,15 +1,26 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import styles from "../../styles/LoginScreen.styles";
+import { useNavigation } from "@react-navigation/native";
+import { RootStackParamList } from "../types/navigation"; // Import the type
+import { StackNavigationProp } from "@react-navigation/stack";
+
+// Define the navigation prop type for the Login screen
+type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, "Login">;
 
 const LoginScreen: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
+  const navigation = useNavigation<LoginScreenNavigationProp>();
+
   const handleLogin = () => {
-    // Add your login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    // Add authentication logic here
+    if (email && password) {
+      navigation.navigate("Home"); // Navigate to the Home Screen
+    } else {
+      alert("Please enter both email and password.");
+    }
   };
 
   return (
